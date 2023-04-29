@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link href="{% static 'style.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'images/logo.jpg' %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+    </head>
+    <body>
+        <div class="contenedor-logo">
+            <img class="imagen-icono" src="{% static 'images/logo.jpg' %}" alt="logofruta"/>
+        </div>
+        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                            {% if request.path == '/home/' %}
+                                id="marcado"
+                            {% endif %}  
+                            class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                            {% if request.path == '/catalogo/' %}
+                                id="marcado"
+                            {% endif %} 
+                            class="nav-link" href="{% url 'catalogo' %}">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a 
+                            {% if request.path == '/contacto/' %}
+                                id="marcado"
+                            {% endif %} 
+                            class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a 
+                            {% if request.path == '/about/' %}
+                                id="marcado"
+                            {% endif %} 
+                            class="nav-link" href="{% url 'about' %}">Acerca de</a>
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main>
+            {% block main %}
+            {% endblock main %}
+        </main>
+        <footer class="navbar navbar-expand-sm bg-dark navbar-dark navbar-brand">
+            <p><img src="https://internetpasoapaso.com/wp-content/uploads/News-Alert.gif" width="30" height="30" alt="alerta"/> Copyright © 2023 - Juan Ignacio Rago - Bs.As Tandil</p>
+        </footer>
+    </body>
+</html>

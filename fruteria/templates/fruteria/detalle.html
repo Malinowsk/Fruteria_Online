@@ -1,0 +1,38 @@
+{% extends "fruteria/base.html" %}
+
+{% block main %}
+
+    <h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;"> Detalle </h1>
+    <div class='itemdetail-container'>
+        <div class='detail-container'>
+            <div class='grid-container'>
+                <div class='image-container'>  
+                    <img src="https://www.lavanguardia.com/files/image_948_465/uploads/2019/12/23/5e9982c14df30.jpeg" alt="Fruta"/>  
+                </div>
+                <div class='data-container'>
+                    <h1>  Manzana Roja  </h1>
+                    <div class='descripcion-container'>
+                        <h2> Red delicious Jamaiquina </h2>
+                        <p class="descripcion"> Esta seguro que la conoces por que esta es la manzana de Blancanieves. Su piel es de color rojo intenso mientras que su pulpa es dulce y sin acidez. Su carácter harinoso lo hace perfecto para cocinar tanto en postres como por ejemplo, al horno. </p>
+                        <p> Precio : $ 180 Kg </p>
+                    </div>
+                    <div class='Itemcount-container'>
+                        <div class="Itemcount">
+                            <div class='ItemCount-add'>
+                            <button class="removeButton" >  
+                                - 
+                            </button>
+                            <strong class="count"> 1 Kg </strong>
+                            <button class="addButton"  >
+                                +
+                            </button>
+                            </div>
+                            <button class='addCarrito' > Añadir al carrito </button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock main %}

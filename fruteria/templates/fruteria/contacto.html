@@ -1,0 +1,60 @@
+{% extends "fruteria/base.html" %}
+
+{% block main %}
+
+<h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;" >Contactanos</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+
+                        <div class="form-group" style=" margin: 3px 180px">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-12">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group" style=" margin: 3px 180px">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-12">
+                                <input id="lname" name="name" type="text" placeholder="Apellido" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style=" margin: 3px 180px">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-12">
+                                <input id="email" name="email" type="text" placeholder="Dirección Email" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style=" margin: 3px 180px">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-12">
+                                <input id="phone" name="phone" type="text" placeholder="Nro Telefono" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style=" margin: 3px 180px;">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-12">
+                                <textarea class="form-control" id="message" style="max-height: 182px; min-height: 182px;" name="message" placeholder="Introduzca su mensaje para nosotros aquí. Nos pondremos en contacto con usted dentro de 2 días hábiles." rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
+

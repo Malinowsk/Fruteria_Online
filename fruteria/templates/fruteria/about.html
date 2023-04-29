@@ -1,0 +1,29 @@
+
+{% extends "fruteria/base.html" %}
+
+{% block main %}
+
+    {% load static %}
+    <h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;">
+        Acerca de mi
+    </h1>
+
+    <div style=" display: flex; justify-content: space-around; width: 100%; align-items: center;">
+        <img style=" border-radius: 100%; height: 300px; margin: 10px;" src="{% static 'images/perfil1.png' %}" alt="foto-wsp">
+        <p style=" margin: 20px; text-align: justify; background-color: white; padding: 25px; border-radius: 10px;">
+            Hola! Me llamo Juan. Soy Argentino y Marplatence, vivo hace un tiempo en la ciudad de Tandil perteneciente a la Provincia de Buenos Aires. 
+            De chico me gusta jugar al futbol, soy hincha de San Lorenzo de Almagro y fan de la selección Argentina. También soy de ir a pescar y vacacionar donde haya playa cerca.
+            <br/><br/> 
+            Mi pasión profesional corresponde al área de los sistemas informáticos. Soy estudiante avanzado en Ingeniería de Sistemas, 
+            considero que en los últimos años he estado en constante aprendizaje en lo que concierne al uso de tecnologías y desarrollo de software.
+            Me gusta aprender cosas nuevas ya sea por medios de curso online o presencial, proyecto con iniciativa de la facultad o personales.
+            Actualmente este proyecto web fue desarrollado con el fin de aprender Python y Django. Espero que les guste y puedan disfrutarlo, abrazo!
+        </p>
+        
+    </div>
+
+{% endblock main %}
+
+
+
+
