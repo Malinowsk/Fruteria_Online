@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-a3b$8r(ss2l2w2qqig^q_++iagl=bvz0!2b6-24+lu#yhke9d_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Malinowski.mysql.pythonanywhere-services.com']
 
 
 # Application definition
@@ -65,11 +65,10 @@ WSGI_APPLICATION = 'fruteria_online.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fruit_online',
-        'USER' : 'root',
-        'PASSWORD' : '',
-        'HOST' : '127.0.0.1',
-        'DATABASE_PORT' : '5432',
+        'NAME': 'Malinowski$fruit_online',
+        'USER' : 'Malinowski',
+        'PASSWORD' : '34648616qQ100--100tutury',
+        'HOST' : 'Malinowski.mysql.pythonanywhere-services.com',
     }
 }
 
