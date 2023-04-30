@@ -38,12 +38,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'fruteria_online.urls'
+ROOT_URLCONF = 'Malinowski$fruit_online'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "fruteria/templates/fruteria",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
