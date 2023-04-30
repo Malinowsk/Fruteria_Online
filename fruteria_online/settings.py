@@ -62,19 +62,29 @@ WSGI_APPLICATION = 'fruteria_online.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
-# comando adicional : pip install psycopg2
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fruteria_online',
-        'USER' : 'postgres',
-        'PASSWORD' : '34648616q',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fruit_online',
+        'USER' : 'root',
+        'PASSWORD' : '',
         'HOST' : '127.0.0.1',
         'DATABASE_PORT' : '5432',
     }
 }
+
+# comando adicional : pip install psycopg2
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'fruteria_online',
+#         'USER' : 'postgres',
+#         'PASSWORD' : '34648616q',
+#         'HOST' : '127.0.0.1',
+#         'DATABASE_PORT' : '5432',
+#     }
+# }
 
 
 # Password validation
