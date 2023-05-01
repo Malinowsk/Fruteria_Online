@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a3b$8r(ss2l2w2qqig^q_++iagl=bvz0!2b6-24+lu#yhke9d_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['Malinowski.pythonanywhere.com']
 
@@ -38,12 +39,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Malinowski$fruit_online'
+ROOT_URLCONF = 'fruteria_online.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "fruteria/templates/fruteria",],
+        'DIRS': [BASE_DIR / "fruteria/templates/fruteria",], #dudoso
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fruit_online.wsgi.application'
+WSGI_APPLICATION = 'fruteria_online.wsgi.application'
 
 
 # Database
@@ -126,7 +127,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR / "static_root"
+STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
+#STATIC_ROOT = BASE_DIR / "static_root"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
