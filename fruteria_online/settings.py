@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-a3b$8r(ss2l2w2qqig^q_++iagl=bvz0!2b6-24+lu#yhke9d_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Malinowski.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','Malinowski.pythonanywhere.com']
 
 
 # Application definition
@@ -76,14 +76,14 @@ DATABASES = {
 # comando adicional : pip install psycopg2
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'fruteria_online',
-#         'USER' : 'postgres',
-#         'PASSWORD' : '34648616q',
-#         'HOST' : '127.0.0.1',
-#         'DATABASE_PORT' : '5432',
-#     }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'fruit_online',
+#          'USER' : 'root',
+#          'PASSWORD' : '34648616q',
+#          'HOST' : '127.0.0.1',
+#          'DATABASE_PORT' : '5432',
+#      }
 # }
 
 
