@@ -81,8 +81,14 @@ div.imagen-principal img {
 }
 
 
+h1 img.imagen-icono{
+    margin-bottom: 20px;
+}
+
 img.imagen-icono{
     width: 100px;
+    margin: 2px 0px;
+
 }
 
 h1 img.imagen-icono{
@@ -102,7 +108,7 @@ nav{
     
 }
 
-a::after {
+ul li nav a::after {
     content: "";
     right: 0;
     left: 40px;
@@ -113,7 +119,7 @@ a::after {
     background-color: #01e675;
     transition: all .25s ease-out;}
 
-a:hover::after {
+ul li nav a:hover::after {
     width: 85%;
 }
 
@@ -189,12 +195,21 @@ footer.navbar p{
 
 }
 
-.item-container button {
+#mensaje{
+    padding: 40px 40px;
+}
+
+.item-container button{
     background-color: #beb0a7;
     border: 1px solid ivory;
     color: ivory;
     border-radius: 8px;
     padding: 5px 20px;
+}
+
+nav a::after{
+    color: ivory !important; 
+    text-decoration: none !important;
 }
 
 .card-container img{
@@ -306,7 +321,7 @@ footer.navbar p{
 
       .descripcion-container p.descripcion{
         padding: 0px 45px;
-        text-align: justify;
+        text-align: center;
     }
       
       

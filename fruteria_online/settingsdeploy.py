@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-a3b$8r(ss2l2w2qqig^q_++iagl=bvz0!2b6-24+lu#yhke9d_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','Malinowski.pythonanywhere.com']
 
 
 # Application definition
@@ -43,7 +44,7 @@ ROOT_URLCONF = 'fruteria_online.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "fruteria/templates/fruteria",], #dudoso
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,35 +63,27 @@ WSGI_APPLICATION = 'fruteria_online.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fruit_online',
-        'USER' : 'root',
-        'PASSWORD' : '',
-        'HOST' : '127.0.0.1',
-        'DATABASE_PORT' : '5432',
+        'NAME': 'Malinowski$fruit_online',
+        'USER' : 'Malinowski',
+        'PASSWORD' : '34648616qQ100--100tutury',
+        'HOST' : 'Malinowski.mysql.pythonanywhere-services.com',
     }
 }
 
 # comando adicional : pip install psycopg2
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'fruteria_online',
-#         'USER' : 'postgres',
-#         'PASSWORD' : '34648616q',
-#         'HOST' : '127.0.0.1',
-#         'DATABASE_PORT' : '5432',
-#     }
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'fruit_online',
+#          'USER' : 'root',
+#          'PASSWORD' : '34648616q',
+#          'HOST' : '127.0.0.1',
+#          'DATABASE_PORT' : '5432',
+#      }
 # }
 
 
@@ -116,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -133,6 +126,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
+
+#STATIC_ROOT = BASE_DIR / "static_root"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

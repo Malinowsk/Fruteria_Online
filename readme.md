@@ -11,6 +11,18 @@
 
 * ejecutar el comando: django-admin startapp NOMBREDELAAPP
 
+////////////////////
+
+comando para crear tablas en la ddbb:
+
+* python manage.py check fruteria 
+* python manage.py makemigrations (creamos un archico initial.py)
+* python manage.py migrate
+
+?: (mysql.W002) MariaDB Strict Mode is not set for database connection 'default'
+        HINT: MariaDB's Strict Mode fixes many data integrity problems in MariaDB, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/4.2/ref/databases/#mysql-sql-mode
+
+
 ///////////////////////////
 
 Comando para crear una aplicacion:
