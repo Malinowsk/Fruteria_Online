@@ -80,3 +80,19 @@ def add_fruit(request,fruit_id):
                 template_name='fruteria/mensaje.html',
             )
             return http_responde
+        
+def show_cart(request):
+    print("empieza")
+    print(request)
+    print(request.user)
+    print("ENTRE")
+    carrito = PurchaseCart.objects.filter(user= request.user, state="en_carrito")
+    print(carrito)
+    print("TERMINA")
+    contexto = {"carrito": carrito}
+    http_responde = render(
+        request=request,
+        template_name='fruteria/cart.html',
+        context=contexto,
+    )
+    return http_responde

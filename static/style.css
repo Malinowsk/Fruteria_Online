@@ -265,154 +265,197 @@ nav a::after{
         flex-direction: row;
       }
     
-    }
+}
 
 
-    /* /////////////////////////////////////////////// */
+/* /////////////////////////////////////////////// */
 
-    .detail-container{
+.detail-container{
+
+background-color: ivory;
+}
+
+.grid-container{
     
-        background-color: ivory;
-      }
-      
-      .grid-container{
-           
-          display: grid;
-          grid-template-columns: 1fr;
-          background-color: white;
-          height: 1000px;
-          padding-top: 50px;
-          padding-bottom: 50px;
-         
-      }
-     
-     .mensaje{
-         margin-top: 10px;
-      }
-     
-      .data-container{
-          display: flex ;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 400px;
-          
-          
-           
-      }
-      .data-container h1{
-          
-          border-bottom: .5px  solid black;
-          font-size: 24px;
-          color: black ;
-         }
-      
-         .data-container h2{
-          
-            font-size: 22px;
-            color: black ;
-           }
-      
-      
-      .descripcion-container p{
-          color: black;
-          margin: 20px 0px;
-         
-      }
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    height: 1000px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
 
-      .descripcion-container p.descripcion{
-        padding: 0px 45px;
-        text-align: center;
+.mensaje{
+    margin-top: 10px;
+}
+
+.data-container{
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    
+    
+    
+}
+.data-container h1{
+    
+    border-bottom: .5px  solid black;
+    font-size: 24px;
+    color: black ;
     }
-      
-      
-      .image-container{
-          display: flex;
-          justify-content: center;
-      }
-      
-      
-     .image-container img{
-         border: 8px solid black;
-         width: 95%;
-         height: 80%;
-     }
-      
-     .image-container img:hover {
-         box-shadow: 0px 0px 20px black;
-     }
-     
-     @media only screen and (min-width: 400px)  {
-         .image-container img{
-         
-             width: 400px;
-             height: 400px;
-         }
-     
-     }
-     
-     
-     @media only screen and (min-width: 768px)  {
-         
-         .grid-container{
-             grid-template-columns: 1fr 1fr;
-             height: 600px;
-         }
-     
-         
-     
-         }
-         .Itemcount div {
-            margin: 10px 0px;
-        }
-        
-        .removeButton{
-            background-color: black;
-            border: 1px solid ivory;
-            color: ivory;
-            border-radius: 8px;
-            padding: 5px 20px;
-        }
-        
-        .removeButton:hover{
-            background-color: #f8ac18;
-            transition: background-color 1s ease;
-            outline: 0;
-            color: black;
-        }
-        
-        .addButton{
-            border: 1px solid ivory;
-            border-radius: 8px;
-          background-color: black;
-          color: ivory;
-            padding: 5px 20px;
-        }
-        
-        .addButton:hover{
-            background-color: #f8ac18;
-            transition: background-color 1s ease;
-            outline: 0;
-            color: black;
-        }
-        
-        
-        .count{
-           color: black;
-            padding: 0px 20px;
-        }
-        
-        
-        .addCarrito {
-            border: 1px solid ivory;
-            border-radius: 8px;
-            background-color: black;
-            color: ivory;
-            padding: 10px;
-        }
-        
-        .addCarrito:hover {
-            background-color: #f8ac18;
-            transition: background-color 1s ease ;
-            outline: 0;
-            color: black;
-        }
+
+    .data-container h2{
+    
+    font-size: 22px;
+    color: black ;
+    }
+
+
+.descripcion-container p{
+    color: black;
+    margin: 20px 0px;
+    
+}
+
+.descripcion-container p.descripcion{
+padding: 0px 45px;
+text-align: center;
+}
+
+
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.image-container img{
+    border: 8px solid black;
+    width: 95%;
+    height: 80%;
+}
+
+.image-container img:hover {
+    box-shadow: 0px 0px 20px black;
+}
+
+@media only screen and (min-width: 400px)  {
+    .image-container img{
+    
+        width: 400px;
+        height: 400px;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px)  {
+    
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+        height: 600px;
+    }
+
+    
+
+    }
+    .Itemcount div {
+    margin: 10px 0px;
+}
+
+.removeButton{
+    background-color: black;
+    border: 1px solid ivory;
+    color: ivory;
+    border-radius: 8px;
+    padding: 5px 20px;
+}
+
+.removeButton:hover{
+    background-color: #f8ac18;
+    transition: background-color 1s ease;
+    outline: 0;
+    color: black;
+}
+
+.addButton{
+    border: 1px solid ivory;
+    border-radius: 8px;
+    background-color: black;
+    color: ivory;
+    padding: 5px 20px;
+}
+
+.addButton:hover{
+    background-color: #f8ac18;
+    transition: background-color 1s ease;
+    outline: 0;
+    color: black;
+}
+
+
+.count{
+    color: black;
+    padding: 0px 20px;
+}
+
+
+.addCarrito {
+    border: 1px solid ivory;
+    border-radius: 8px;
+    background-color: black;
+    color: ivory;
+    padding: 10px;
+}
+
+.addCarrito:hover {
+    background-color: #f8ac18;
+    transition: background-color 1s ease ;
+    outline: 0;
+    color: black;
+}
+
+
+
+/* /////////////////// */
+
+.card-container12{
+    flex-direction:  row; 
+    display: grid;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 10px;
+    border: 10px solid black;
+}
+
+.product-list-container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+@media only screen and (min-width: 768px)  {
+    
+    .card-container12{
+        grid-template-columns: repeat(3,1fr); 
+        display: inline-block;
+    }
+    
+    .product-list-container2{
+        display: initial;
+        flex-direction: row;
+    }
+
+    
+.cart-container2 .item-container2 p {
+    margin: 8px !important;
+}
+    
+}
+    
+/* ////////////////////// */
+/*  */
