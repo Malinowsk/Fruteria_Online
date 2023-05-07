@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from decimal import Decimal
 
 
 class Fruit(models.Model):
@@ -26,4 +27,5 @@ class PurchaseCart(models.Model):
     def __str__(self):
         return f"{self.user.username} | {self.fruit.name} | {self.fruit.detail} | cant= {self.quantity}"
 
-
+    def total_price(self):
+            return Decimal(self.fruit.price) * Decimal(self.quantity)

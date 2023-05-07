@@ -87,9 +87,11 @@ def show_cart(request):
     print(request.user)
     print("ENTRE")
     carrito = PurchaseCart.objects.filter(user= request.user, state="en_carrito")
+    total = sum([fruta.fruit.price*fruta.quantity for fruta in carrito])
     print(carrito)
+    print(total)
     print("TERMINA")
-    contexto = {"carrito": carrito}
+    contexto = {"carrito": carrito, "total": total}
     http_responde = render(
         request=request,
         template_name='fruteria/cart.html',

@@ -6,14 +6,13 @@
 <h1>Este es su Carrito:</h1>
 <div class='product-list-container product-list-container2'>
     {% for fruta in carrito %}
-        <div class='card-container1 card-container12'>     
+        <div class='card-container1 card-container12'>
             <div class='card-container2 card-container'>
                 <div class='item-container2 item-container'>
                   <h2> {{fruta.fruit.name}} </h2>
-                  <img src="{{fruta.fruit.photo}}" alt="error"/> 
-                  {% with resultado=fruta.fruit.price*fruta.quantity %}
-                  <p> $ {{ resultado }}</p>
-                  {% endwith %}
+                  <img src="{{fruta.fruit.photo}}" alt="error"/>
+                  <p>{{ fruta.fruit.detail }}</p>
+                  <p>{{ fruta.total_price }}</p>
                   <p> Cantidad: {{fruta.quantity}} kg </p>
                   <button>  Eliminar del Carrito </button>
                 </div>
@@ -22,8 +21,8 @@
     {% endfor %}
 </div>
 
-{% with total=sum([fruta.fruit.price*fruta.quantity for fruta in carrito]) %}
-<h2>Total a pagar es : $ {{ total }}</h2>
+{% with total=carrito|total_price %}
+    <h2>Total a pagar es: $ {{ total }}</h2>
 {% endwith %}
 
 <button class='button'>Comprar</button>
