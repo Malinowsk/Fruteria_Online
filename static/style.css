@@ -451,11 +451,37 @@ text-align: center;
     }
 
     
-.cart-container2 .item-container2 p {
-    margin: 8px !important;
 }
-    
+
+form button{
+    padding: 12px;
 }
-    
-/* ////////////////////// */
-/*  */
+
+form button:hover{
+    background-color: black;
+    opacity: 0.8;
+}
+h2{
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    }
+
+
+button {
+    background-color: #beb0a7;
+    /* border: 1px solid black; */
+    border: 1px solid ivory;
+    color: ivory;
+    border-radius: 8px;
+    padding: 5px 20px;
+    }
+
+    .button {
+        text-decoration: none;
+        color: ivory;
+    }
+
+    button:hover{
+        background-color: #f8ac18;
+    }

@@ -30,12 +30,19 @@
                                 +
                             </button>
                             </div>
-                            <form  action="{% url 'cart_add' fruta.id %}" method="post">
-
+                            
+                            <form  action=" {% if atributo_url == 'detail' %}
+                                                {% url 'cart_add' fruta.id %}
+                                            {% else %}
+                                                {% url 'cart_Edit_confirm' fruta.id %}
+                                            {% endif %}" method="post">
                                 {% csrf_token %}
                                 {{ form.as_p }}
-                                {% comment %} <input type="hidden" name="quantity" id="numKghidden" value="1"> {% endcomment %}
-                                <button class='addCarrito' type='submit' >  Agregar al carrito </button>
+                                
+                                <button class='addCarrito' type='submit'> Agregar al carrito </button>
+                                {% if mensaje != None %}
+                                    <p>{{mensaje}}</p>
+                                {% endif %}
                             </form>
                         </div>
                     </div>
