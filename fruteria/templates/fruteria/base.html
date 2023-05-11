@@ -19,7 +19,11 @@
         
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                
+                <div class="container-header">
+                    <button style="padding: 1px 12px !important;background-color: yellowgreen;">
+                        <a style="color: tomato;" class="login" href="{% url 'cart' %}">Log In</a>
+                    </button>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +34,7 @@
                             {% if request.path == '/' %}
                                 id="marcado"
                             {% endif %}  
-                            class="nav-link" href="{% url 'home' %}">Home</a>
+                            class="nav-link" href="{% url 'home' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a
@@ -44,7 +48,7 @@
                             {% if request.path == '/contacto/' %}
                                 id="marcado"
                             {% endif %} 
-                            class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
+                            class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a 
@@ -54,6 +58,9 @@
                             class="nav-link" href="{% url 'about' %}">Acerca de</a>
                         </li>   
                     </ul>
+                </div>
+                <div class="container-header" style="justify-content: flex-end">
+                    <a class="nav-link" href="{% url 'cart' %}"> <img class="image-cart" src="{% static 'images/cart.png' %}" alt="logocarrito"/> </a>
                 </div>
             </div>
         </nav>

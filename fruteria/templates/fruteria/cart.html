@@ -14,8 +14,12 @@
                     <p style="margin-bottom: 5px">${{ fruta.total_price }}</p>
                     <p> Cantidad: {{fruta.quantity}} kg </p>
                     <div style=" display: flex">
-                        <button style=" padding: 5px 2px; margin: 0px 3px"> <a class="nav-link" href="{% url 'cart_delete' fruta.fruit.id %}"> Eliminar del Carrito </a></button>
-                        <button style=" padding: 5px 2px; margin: 0px 3px"> <a class="nav-link" href="{% url 'cart_edit' fruta.fruit.id None %}"> Editar del Carrito </a></button>
+                        <form  action="{% url 'cart_delete' fruta.fruit.id %}" method="post">
+                            {% csrf_token %}
+                         
+                            <button style=" padding: 5px 2px; margin: 0px 3px" type="submit"> <a class="nav-link"> Eliminar del Carrito </a></button>
+                        </form>
+                        <button style=" padding: 5px 2px; margin: 0px 3px"> <a class="nav-link" href="{% url 'cart_edit' fruta.fruit.id %}"> Editar del Carrito </a></button>
                     </div>
                 </div>
             </div>
@@ -24,7 +28,10 @@
 </div>
 
 <h2>Total a pagar es: <span style="background-color: #f8ac18; border-radius: 50px;">$ {{ total }}</span></h2>
-<form>
-<button class='button' style="background-color: red;">Hacer la Comprar</button>
+
+<form  action="{% url 'cart_purchase' %}" method="post">
+    {% csrf_token %}    
+    <button class='button' type="submit" style="background-color: red;">Hacer la Comprar</button>
 </form>
+
 {% endblock main %}

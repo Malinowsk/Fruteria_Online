@@ -25,7 +25,16 @@
                             <button class="removeButton" id="restar" >
                                 -
                             </button>
-                            <strong class="count"> <span id="numKg">1</span> Kg </strong>
+                            <strong class="count"> 
+                                <span id="numKg">
+                                    {% if atributo_url == 'detail' %}
+                                        1
+                                    {% else %}
+                                        {{quantity}}
+                                    {% endif %}
+                                </span> 
+                                Kg 
+                            </strong>
                             <button class="addButton" id="sumar" >
                                 +
                             </button>
@@ -39,11 +48,22 @@
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 
-                                <button class='addCarrito' type='submit'> Agregar al carrito </button>
-                                {% if mensaje != None %}
-                                    <p>{{mensaje}}</p>
-                                {% endif %}
+                                <button class='addCarrito' type='submit'> 
+                                    {% if atributo_url == 'detail' %}
+                                        Agregar al carrito
+                                    {% else %}
+                                        Editar Cantidad
+                                    {% endif %}
+                                </button>
                             </form>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+                             {% endif %}
                         </div>
                     </div>
                 </div>

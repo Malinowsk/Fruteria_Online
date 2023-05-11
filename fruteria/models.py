@@ -16,7 +16,6 @@ class Fruit(models.Model):
         return f"{self.name} | {self.detail} | ${self.price} Kg"
     
 
-
 class PurchaseCart(models.Model):
     user = models.ForeignKey(User, on_delete=models.RESTRICT)
     fruit = models.ForeignKey(Fruit, on_delete=models.RESTRICT) 

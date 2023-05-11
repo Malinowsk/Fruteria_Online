@@ -11,7 +11,7 @@ function subKg(){
     
     if (numero!=1){
         document.querySelector("#numKg").innerHTML = numero - 1;
-        document.querySelector("#id_quantity").innerHTML = numero - 1;
+        document.querySelector("#id_quantity").value = numero - 1;
     }
 }
 

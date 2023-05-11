@@ -485,3 +485,17 @@ button {
     button:hover{
         background-color: #f8ac18;
     }
+
+    .tag1{
+        margin: 11px !important;
+    }
+
+
+    .image-cart{
+        width: 40px;
+    }
+
+    .container-header{
+        display: flex;
+        width: 150px;
+    }
