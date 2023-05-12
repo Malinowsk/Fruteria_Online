@@ -497,5 +497,11 @@ button {
 
     .container-header{
         display: flex;
-        width: 150px;
+        width: 300px;
+    }
+
+    p input{
+        width: 350px;
+        border-radius: 0.375rem;
+        margin: 3px 0px;
     }

@@ -133,5 +133,6 @@ def get_purchase(request):
             purchase.state = "en_proceso_de_compra"
             purchase.purchase_code = code
             purchase.save()
-        url = reverse('cart') 
+        messages.success(request, "Su compra ah sido con éxito! Las frutas llega a su domicilio en las proxima 24 horas. Muchas gracias! ", extra_tags='tag1')
+        url = reverse('catalogo') 
         return redirect(url)

@@ -76,22 +76,22 @@ WSGI_APPLICATION = 'fruteria_online.wsgi.application'
 
 
 
+# DATABASES = {
+#      "default": {
+#          "ENGINE": "django.db.backends.sqlite3",
+#          "NAME": BASE_DIR / "db.sqlite3",
+#      }
+# }
+
 DATABASES = {
-     "default": {
-         "ENGINE": "django.db.backends.sqlite3",
-         "NAME": BASE_DIR / "db.sqlite3",
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'Malinowski$fruit_online',
+         'USER' : 'Malinowski',
+         'PASSWORD' : '34648616qQ100--100tutury',
+         'HOST' : 'Malinowski.mysql.pythonanywhere-services.com',
      }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'Malinowski$fruit_online',
-#         'USER' : 'Malinowski',
-#         'PASSWORD' : '34648616qQ100--100tutury',
-#         'HOST' : 'Malinowski.mysql.pythonanywhere-services.com',
-#     }
-# }
 
 # comando adicional : pip install psycopg2
 
