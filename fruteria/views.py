@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.contrib import messages
 from fruteria.models import Fruit , PurchaseCart
 from fruteria.forms import PurchaseCartFormulario
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 import random
 import string
 
@@ -61,6 +63,7 @@ def presentar_detail(request, id):
     )
     return http_responde
 
+@login_required
 def presentar_mensaje(request):
     contexto = {}
     http_responde = render(
@@ -71,6 +74,7 @@ def presentar_mensaje(request):
     return http_responde
 
 
+@login_required
 def add_fruit(request,fruit_id):
     if request.method == "POST":
         formulario = PurchaseCartFormulario(request.POST)
@@ -90,8 +94,12 @@ def add_fruit(request,fruit_id):
                 messages.error(request, "Ya posee en su carrito esta fruta, puede ingresar al carrito para modificar la cantidad de kg que desea comprar.", extra_tags='tag1')
                 url_fallida = reverse('detail', args=[fruit_id]) 
                 return redirect(url_fallida)
+    else:
+        messages.error(request, "No se pudo agregar la fruta al carrito de compras, vuelva intentarlo por favor..", extra_tags='tag1')
+        url_fallida = reverse('detail', args=[fruit_id]) 
+        return redirect(url_fallida)  
         
-    
+@login_required
 def show_cart(request):
     carrito = PurchaseCart.objects.filter(user= request.user, state="en_carrito")
     total = sum([fruta.fruit.price*fruta.quantity for fruta in carrito])
@@ -103,7 +111,7 @@ def show_cart(request):
     )
     return http_responde
 
-
+@login_required
 def delete_fruit(request, fruit_id):
     if request.method == "POST":
         fruit = Fruit.objects.get(id=fruit_id)
@@ -112,7 +120,7 @@ def delete_fruit(request, fruit_id):
         url = reverse('cart') 
         return redirect(url)
 
-
+@login_required
 def edit_fruit(request,fruit_id):
     if request.method == "POST":
         formulario = PurchaseCartFormulario(request.POST)
@@ -125,6 +133,7 @@ def edit_fruit(request,fruit_id):
             url = reverse('cart') 
             return redirect(url)
 
+@login_required
 def get_purchase(request):
     if request.method == "POST":
         purchase_cart = PurchaseCart.objects.filter(user= request.user, state = "en_carrito")
