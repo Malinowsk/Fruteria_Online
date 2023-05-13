@@ -14,12 +14,8 @@ NOMBRECARPETA_VENV\Scripts\activate```
     + Ejecutar el comando: ```git clone https://github.com/Malinowsk/Tercera-Pre-Entrega-Rago.git```
     + También existe la alternativa por SSH: ```git clone git@github.com:Malinowsk/Tercera-Pre-Entrega-Rago.git```
 + Entra en la carpeta que acabas de clonar
-+ Para instalar las dependencias corre este comando:```
-pip install -r requirements.txt
-```
-+ Para instalar Django corre este comando: ```
-pip install django
-```
++ Para instalar las dependencias corre este comando: ```pip install -r requirements.txt```
++ Para instalar Django corre este comando: ```pip install django```
 
 ## Instrucciones para importa la base de datos MySQL
 + Instalar XAMP en tu ordenador https://www.apachefriends.org/es/download.html
@@ -31,21 +27,13 @@ pip install django
 
 
 ## Instrucciones para entrar al panel administrativo de Django
-+ En consola, crear un superuser: ```
-python manage.py createsuperuser
-```
-+ Acceder con user y password via: ```
-127.0.0.1:8000/admin
-```
++ En consola, crear un superuser: ```python manage.py createsuperuser```
++ Acceder con user y password via: ```127.0.0.1:8000/admin```
 
 
 ## Instrucciones para correr el proyecto web
-+ En consola, ejecutar el comando: ```
-python .\manage.py runserver
-```
-+ Ingresar desde el navegador web a la url: ```
-127.0.0.1:8000/
-```
++ En consola, ejecutar el comando: ```python .\manage.py runserver```
++ Ingresar desde el navegador web a la url: ```127.0.0.1:8000/```
 
 
 
