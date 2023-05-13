@@ -25,6 +25,15 @@ pip install -r requirements.txt
 pip install django
 ```
 
+## Instrucciones para importa la base de datos MySQL
++ Instalar XAMP en tu ordenador https://www.apachefriends.org/es/download.html
++ Encender MySQL en XAMP (click en el boton start)
++ Encender pache en XAMP (click en el boton start)
++ Acceder a mysql http://localhost/phpmyadmin/
++ Crear una base de datos con el nombre "fruit_online" 
++ inportar en la base de datos creada, el archivo fruit_online.sql 
+
+
 ## Instrucciones para entrar al panel administrativo de Django
 + En consola, crear un superuser:
 ```
@@ -45,6 +54,8 @@ python .\manage.py runserver
 ```
 127.0.0.1:8000/
 ```
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 
