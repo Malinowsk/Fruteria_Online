@@ -21,7 +21,7 @@ NOMBRECARPETA_VENV\Scripts\activate```
 + Para instalar las dependencias corre este comando: ```pip install -r requirements.txt```
 + Para instalar Django corre este comando: ```pip install django```
 
-## Instrucciones para importa la base de datos MySQL
+## Instrucciones para importa la base de datos MySQL 
 + Instalar XAMP en tu ordenador https://www.apachefriends.org/es/download.html
 + Encender MySQL en XAMP (click en el boton start)
 + Encender pache en XAMP (click en el boton start)
