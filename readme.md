@@ -1,3 +1,4 @@
+[![made-with-Django](https://img.shields.io/badge/Made%20with-Django-625.svg)](https://www.djangoproject.com/)
 # Pedidos de Frutas Online 🍊
 El proyecto consiste en una aplicacion web para una fruteria que atiende pedidos online. La cual cuenta con una sección para usuarios no registrados, en el que pueden acceder a ver información del creador, tener un contacto con la plataforma, ver las frutas que se vender. Para realizar pedidos se debe registrar con una cuenta e iniciar sesión. Una vez registrado e iniciado sesión podrá acceder a armar su carrito de frutas, eligiendo los kgs de frutas que deseen comprar. Le permite agregar, editar los kgs y eliminar frutas del carrito. El carrito indica el precio por cada fruta determinada por la cantidad de kgs que contiene y al final un precio total a pagar. Realizada la compra, se le informa cuando llegara su pedido y el carrito pasa estar listo para volver a llenarlo.
 
