@@ -1,6 +1,10 @@
 # Pedidos de Fruta Online
 El proyecto consiste en una aplicacion web para una fruteria que atiende pedidos online. La página cuenta con una sección para usuarios no registrados. Para realizar pedidos se debe registrar con una cuenta. Una vez registrado podrá acceder a armar su carrito de frutas, eligiendo los kgs de frutas que desee comprar. Le permite agregar, editar los kgs y eliminar frutas del carrito. El carrito indica el precio por cada fruta determinada por la cantidad de kgs que contiene y al final un precio total a pagar. La página cuenta con acceso a la información detallada de cada fruta. Realizada la compra, se le informa cuando llegara su pedido y el carrito pasa estar listo para volver a llenarlo.
 
+## Video Demostración
+
+https://youtu.be/O3tgo0Txl9Q
+
 ## Instrucciones instalar proyecto en local
 + Instala el interprete de python en tu ordenador https://www.python.org/downloads/
 + Crea una carpeta contenedora madre
