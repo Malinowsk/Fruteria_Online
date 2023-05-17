@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Home</title>
+        <title>Tienda de Frutas</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,15 +21,31 @@
             <div class="container-fluid">
                 <div class="container-header">
                     {% if user.is_authenticated %}
-                        <button style="padding: 1px 5px !important;background-color: yellowgreen; margin-left: 6px;">
-                            <a style="color: tomato;" class="login" href="{% url 'logout' %}">Cierre sesión</a>
+
+                    <div class="dropdown">
+                        <button  id="login" style="padding: 1px 5px !important; margin-left: 6px;" class="  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div style="display: inline-flex;">
+                                <span> <img class="avatar" src="{{ user.avatar.image.url }}" alt="avatar"/> </span>
+                            </div>
                         </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li id="login">
+                                <a class="dropdown-item" href="{% url 'edit_profile' %}">Editar mis datos</a>
+                            </li>
+                            <li id="login">
+                                <a class="dropdown-item" href="{% url 'add_avatar' %}">Agregar avatar</a>
+                            </li>
+                            <li id="login">
+                                <a class="dropdown-item" href="{% url 'logout' %}"><strong>Cerrar Sesión</strong></a>
+                            </li>
+                        </ul>
+                    </div>
                         {% else %}
-                        <button style="padding: 1px 5px !important;background-color: yellowgreen;">
-                            <a style="color: tomato;" class="login" href="{% url 'login' %}">Inicio sesión</a>
+                        <button id="login" style="padding: 1px 5px !important;">
+                            <a  class="login" href="{% url 'login' %}">Inicio sesión</a>
                         </button>
-                        <button style="padding: 1px 5px !important;background-color: yellowgreen; margin-left: 6px;">
-                            <a style="color: tomato;" class="login" href="{% url 'registro' %}">Registro</a>
+                        <button id="login" style="padding: 1px 5px !important; margin-left: 6px;">
+                            <a class="login" href="{% url 'Registration' %}">Registrarse</a>
                         </button>
                     {% endif %}
                     
@@ -48,10 +64,10 @@
                         </li>
                         <li class="nav-item">
                             <a
-                            {% if request.path == '/catalogo/' %}
+                            {% if request.path == '/catalog/' %}
                                 id="marcado"
                             {% endif %} 
-                            class="nav-link" href="{% url 'catalogo' %}">Catálogo</a>
+                            class="nav-link" href="{% url 'catalog' %}">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a 
@@ -70,7 +86,10 @@
                     </ul>
                 </div>
                 <div class="container-header" style="justify-content: flex-end; margin-right: 7px">
-                    <a class="nav-link" href="{% url 'cart' %}"> <img class="image-cart" src="{% static 'images/cart.png' %}" alt="logocarrito"/> </a>
+                    {% if num_cart %}
+                        <span id="num-cart">{{num_cart}}</span>
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'cart' %}"> <img class="image-cart" src="{% static 'images/cart2.png' %}" alt="logocarrito"/> </a>
                 </div>
             </div>
         </nav>

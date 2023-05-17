@@ -1,0 +1,17 @@
+{% extends "fruteria/base.html" %}
+
+{% block main %}
+    <h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;" >Subir avatar</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <fieldset>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <div class="col-md-12 text-center" style="margin-top: 40px;">
+                    <button type="submit" class="btn btn-success">Subir imagen</button>
+                </div>
+            </div>
+        </fieldset>    
+    </form>
+{% endblock main %}

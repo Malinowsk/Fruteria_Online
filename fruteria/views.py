@@ -2,74 +2,86 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
 from fruteria.models import Fruit , PurchaseCart
-from fruteria.forms import PurchaseCartFormulario
+from fruteria.forms import PurchaseCartform
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 import random
 import string
 
-def presentar_home(request):
-    contexto = {}
+def show_home(request):
+    context = {}
+    print(request.user.is_authenticated)
+    if are_user_authenticated(request):
+        context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/home.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
-def presentar_catalogo(request):
+def show_catalog(request):
     frutas = Fruit.objects.all()
-    contexto = {"frutas": frutas}
+    context = {"frutas": frutas}
+    if  are_user_authenticated(request):
+        context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
-        template_name='fruteria/catalogo.html',
-        context=contexto,
+        template_name='fruteria/catalog.html',
+        context=context,
     )
     return http_responde
 
 
-def presentar_contacto(request):
-    contexto = {}
+def show_contacto(request):
+    context = {}
+    if  are_user_authenticated(request):
+        context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/contacto.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
 
-def presentar_about(request):
-    contexto = {}
+def show_about(request):
+    context = {}
+    if  are_user_authenticated(request):
+        context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/about.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
 
-def presentar_detail(request, id):
-    formulario =  PurchaseCartFormulario()
+def show_detail(request, id):
+    form =  PurchaseCartform()
     fruit = Fruit.objects.get(id = id)
     atributo_url= request.path.split('/')[1]
-    contexto = {"fruta": fruit, "form":formulario, "atributo_url":atributo_url}
+    context = {"fruta": fruit, "form":form, "atributo_url":atributo_url}
     if atributo_url == 'cart':
         quantity = PurchaseCart.objects.get(fruit=fruit, user= request.user, state = "en_carrito").quantity
-        contexto["quantity"] = quantity
+        context["quantity"] = quantity
+    if  are_user_authenticated(request):
+        context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/detalle.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
 @login_required
-def presentar_mensaje(request):
-    contexto = {}
+def show_mensaje(request):
+    context = {}
+    context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/mensaje.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
@@ -77,17 +89,20 @@ def presentar_mensaje(request):
 @login_required
 def add_fruit(request,fruit_id):
     if request.method == "POST":
-        formulario = PurchaseCartFormulario(request.POST)
-        if formulario.is_valid():
+        form = PurchaseCartform(request.POST)
+        if form.is_valid():
             fruit = Fruit.objects.get(id=fruit_id)
             if not PurchaseCart.objects.filter(user=request.user,fruit=fruit,state="en_carrito").exists(): 
-                data = formulario.cleaned_data  # es un diccionario
+                data = form.cleaned_data  # es un diccionario
                 quantity = data["quantity"]
                 purchase_cart = PurchaseCart(fruit=fruit, user= request.user, quantity=quantity , state = "en_carrito")  # lo crean solo en RAM
                 purchase_cart.save()  # Lo guardan en la Base de datos
+                context={}
+                context["num_cart"] = get_cart_num(request)
                 http_responde = render(
                     request=request,
                     template_name='fruteria/mensaje.html',
+                    context=context,
                 )
                 return http_responde
             else:
@@ -103,11 +118,12 @@ def add_fruit(request,fruit_id):
 def show_cart(request):
     carrito = PurchaseCart.objects.filter(user= request.user, state="en_carrito")
     total = sum([fruta.fruit.price*fruta.quantity for fruta in carrito])
-    contexto = {"carrito": carrito, "total": total}
+    context = {"carrito": carrito, "total": total}
+    context["num_cart"] = get_cart_num(request)
     http_responde = render(
         request=request,
         template_name='fruteria/cart.html',
-        context=contexto,
+        context=context,
     )
     return http_responde
 
@@ -123,11 +139,11 @@ def delete_fruit(request, fruit_id):
 @login_required
 def edit_fruit(request,fruit_id):
     if request.method == "POST":
-        formulario = PurchaseCartFormulario(request.POST)
-        if formulario.is_valid():
+        form = PurchaseCartform(request.POST)
+        if form.is_valid():
             fruit = Fruit.objects.get(id=fruit_id)
             purchase_cart = PurchaseCart.objects.get(fruit=fruit, user= request.user, state = "en_carrito")
-            data = formulario.cleaned_data  # es un diccionario
+            data = form.cleaned_data  # es un diccionario
             purchase_cart.quantity = data["quantity"]
             purchase_cart.save()  # Lo guardan en la Base de datos
             url = reverse('cart') 
@@ -142,6 +158,13 @@ def get_purchase(request):
             purchase.state = "en_proceso_de_compra"
             purchase.purchase_code = code
             purchase.save()
-        messages.success(request, "Su compra ah sido con éxito! Las frutas llega a su domicilio en las proxima 24 horas. Muchas gracias! ", extra_tags='tag1')
-        url = reverse('catalogo') 
+        messages.success(request, "Su compra ha sido con éxito! Las frutas llega a su domicilio en las proxima 24 horas. Muchas gracias! ", extra_tags='tag1')
+        url = reverse('catalog') 
         return redirect(url)
+    
+
+def get_cart_num(request):
+    return len(PurchaseCart.objects.filter(user= request.user, state = "en_carrito"))
+
+def are_user_authenticated(request):
+    return request.user.is_authenticated

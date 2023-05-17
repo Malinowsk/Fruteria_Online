@@ -1,0 +1,21 @@
+{% extends "fruteria/base.html" %}
+
+{% block main %}
+
+    <h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;" >Editar datos</h1>
+
+    <p style="width: 100%; text-align: center; margin: 0px 0px 10px 0px; font-style: italic;text-decoration: underline;color: darkgreen;">Tu username es <b>{{ object.username }}</b></p>
+
+    <form method="post">
+        <fieldset>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <div class="col-md-12 text-center" style="margin-top: 40px;">
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock main %}

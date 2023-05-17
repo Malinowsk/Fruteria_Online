@@ -492,7 +492,9 @@ button {
 
 
     .image-cart{
-        width: 40px;
+        width: 35px;
+        margin-right: 6px;
+      
     }
 
     .container-header{
@@ -504,4 +506,39 @@ button {
         width: 350px;
         border-radius: 0.375rem;
         margin: 3px 0px;
+    }
+
+
+    #login{
+        background-color: initial;
+        border: initial;
+    }
+
+    #login:hover{
+        background-color: #2b424f;
+    }
+
+    #login a{
+        color: teal;
+        text-decoration-line: none;
+    }
+
+    #login a:hover{
+        color: #f8ac18;
+    }
+
+
+    #num-cart{
+        position: relative;
+        top: -5px;
+        right: -16px;
+        color: white;
+        background-color: red;
+        border-radius: 100%;
+        width: 24px;
+        height: 23px;        
+    }
+
+    .avatar{
+        height: 48px;
     }
