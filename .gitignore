@@ -6,7 +6,7 @@ venv/
 .cache/
 .pytest_cache/
 pygsheets.egg-info/
-
+settings2.py
 # Other
 .DS_Store
 .coverage
