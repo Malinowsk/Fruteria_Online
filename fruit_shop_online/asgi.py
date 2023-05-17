@@ -1,5 +1,5 @@
 """
-ASGI config for fruteria_online project.
+ASGI config for fruit_shop_online project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fruteria_online.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fruit_shop_online.settings')
 
 application = get_asgi_application()

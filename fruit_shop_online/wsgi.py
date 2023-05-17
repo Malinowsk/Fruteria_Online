@@ -1,5 +1,5 @@
 """
-WSGI config for fruteria_online project.
+WSGI config for fruit_shop_online project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fruteria_online.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fruit_shop_online.settings')
 
 application = get_wsgi_application()

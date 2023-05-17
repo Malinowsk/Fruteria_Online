@@ -64,17 +64,17 @@
                         </li>
                         <li class="nav-item">
                             <a
-                            {% if request.path == '/catalog/' %}
+                            {% if request.path == '/pages/' %}
                                 id="marcado"
                             {% endif %} 
                             class="nav-link" href="{% url 'catalog' %}">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a 
-                            {% if request.path == '/contacto/' %}
+                            {% if request.path == '/contact/' %}
                                 id="marcado"
                             {% endif %} 
-                            class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                            class="nav-link" href="{% url 'contact' %}">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a 

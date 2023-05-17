@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('fruteria', '0001_initial'),
+        ('fruit_shop', '0001_initial'),
     ]
 
     operations = [
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('quantity', models.IntegerField()),
                 ('estado', models.CharField(max_length=256)),
                 ('purchase_code', models.CharField(blank=True, max_length=256, null=True)),
-                ('fruit', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to='fruteria.fruit')),
+                ('fruit', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to='fruit_shop.fruit')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to=settings.AUTH_USER_MODEL)),
             ],
         ),

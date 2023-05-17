@@ -1,23 +1,23 @@
-{% extends "fruteria/base.html" %}
+{% extends "fruit_shop/base.html" %}
 
 {% block main %}
     {% load static %}
     <script>
-        window.data = { max_quantity: {{ fruta.max_quantity }}}
+        window.data = { max_quantity: {{ fruit.max_quantity }}}
     </script>
     <h1 style="width: 100%; text-align: center; margin: 0px 0px 72px 0px; font-weight: bold;"> Detalle </h1>
-    <div class='itemdetail-container'>
-        <div class='detail-container'>
+    <div class='itempages-container'>
+        <div class='pages-container'>
             <div class='grid-container'>
                 <div class='image-container'>
-                    <img src="{{fruta.photo}}" alt="Fruta"/>
+                    <img src="{{fruit.photo}}" alt="fruit"/>
                 </div>
                 <div class='data-container'>
-                    <h1>  {{fruta.name}}  </h1>
+                    <h1>  {{fruit.name}}  </h1>
                     <div class='descripcion-container'>
-                        <h2>{{ fruta.detail }}</h2>
-                        <p class="descripcion"> {{ fruta.description }} </p>
-                        <p> Precio : $ {{fruta.price}} Kg </p>
+                        <h2>{{ fruit.pages }}</h2>
+                        <p class="descripcion"> {{ fruit.description }} </p>
+                        <p> Precio : $ {{fruit.price}} Kg </p>
                     </div>
                     <div class='Itemcount-container'>
                         <div class="Itemcount">
@@ -27,7 +27,7 @@
                             </button>
                             <strong class="count"> 
                                 <span id="numKg">
-                                    {% if atributo_url == 'detail' %}
+                                    {% if attribute_url == 'pages' %}
                                         1
                                     {% else %}
                                         {{quantity}}
@@ -40,16 +40,16 @@
                             </button>
                             </div>
                             
-                            <form  action=" {% if atributo_url == 'detail' %}
-                                                {% url 'cart_add' fruta.id %}
+                            <form  action=" {% if attribute_url == 'pages' %}
+                                                {% url 'cart_add' fruit.id %}
                                             {% else %}
-                                                {% url 'cart_Edit_confirm' fruta.id %}
+                                                {% url 'cart_Edit_confirm' fruit.id %}
                                             {% endif %}" method="post">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 
                                 <button class='addCarrito' type='submit'> 
-                                    {% if atributo_url == 'detail' %}
+                                    {% if attribute_url == 'pages' %}
                                         Agregar al carrito
                                     {% else %}
                                         Editar Cantidad

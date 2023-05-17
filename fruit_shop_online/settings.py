@@ -2,10 +2,8 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-dark',
@@ -15,7 +13,6 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -23,9 +20,9 @@ MESSAGE_TAGS = {
 SECRET_KEY = 'django-insecure-a3b$8r(ss2l2w2qqig^q_++iagl=bvz0!2b6-24+lu#yhke9d_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','Malinowski.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fruteria',
+    'fruit_shop',
     'profiles',
 ]
 
@@ -51,12 +48,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'fruteria_online.urls'
+ROOT_URLCONF = 'fruit_shop_online.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "profiles/templates/profiles"], #dudoso
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,44 +66,19 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fruteria_online.wsgi.application'
+WSGI_APPLICATION = 'fruit_shop_online.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-
-
-# DATABASES = {
-#      "default": {
-#          "ENGINE": "django.db.backends.sqlite3",
-#          "NAME": BASE_DIR / "db.sqlite3",
-#      }
-# }
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'Malinowski$fruit_online',
-         'USER' : 'Malinowski',
-         'PASSWORD' : '34648616qQ100--100tutury',
-         'HOST' : 'Malinowski.mysql.pythonanywhere-services.com',
-     }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fruit_online',
+        'USER' : 'root',
+        'PASSWORD' : '',
+        'HOST' : '127.0.0.1',
+        'DATABASE_PORT' : '5432',
+    }
 }
-
-# comando adicional : pip install psycopg2
-
-# DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.mysql',
-#          'NAME': 'fruit_online',
-#          'USER' : 'root',
-#          'PASSWORD' : '34648616q',
-#          'HOST' : '127.0.0.1',
-#          'DATABASE_PORT' : '5432',
-#      }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -148,14 +120,12 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
-
-#STATIC_ROOT = BASE_DIR / "static_root"
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 LOGIN_URL = 'login'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # a la carpeta donde se guardan los archivos media

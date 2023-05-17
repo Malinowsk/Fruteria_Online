@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 
 from profiles.forms import UserRegisterForm, MyAuthForm, UserUpdateForm, Avatarform
-from fruteria.views import are_user_authenticated, get_cart_num
+from fruit_shop.views import are_user_authenticated, get_cart_num
 from profiles.models import Avatar
 
 
