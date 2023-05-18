@@ -41,7 +41,7 @@ NOMBRECARPETA_VENV\Scripts\activate```
 + Ingresar desde el navegador web a la url: ```127.0.0.1:8000/```
 
 ## Video Demostración
-+ Link a demo: [Link a demo](https://drive.google.com/file/d/1ex05bc9jqY3rPV4MMn_Jveo87KAQxoca/view?usp=sharing)
++ Link a demo: [Link a demo](https://youtu.be/sMbbPsu9Xxs)
 
 ## Deployment
 + Link al deploy: [https://malinowski.pythonanywhere.com/](https://malinowski.pythonanywhere.com/) 
