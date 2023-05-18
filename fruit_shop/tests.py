@@ -8,11 +8,11 @@ class FruitTests(TestCase):
 
     def test_creation_fruit_1(self):
 
-        fruit = Fruit(name="Coco", phono = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , detail = "New Jaimaiquino",description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",price = 80.5,max_quantity = 99)
+        fruit = Fruit(name="Coco", photo="https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , detail = "New Jaimaiquino",description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",price = 80.5,max_quantity = 99)
 
         fruit.save()
         
-        self.assertEqual(fruit.objects.count(), 1)
+        self.assertEqual(Fruit.objects.count(), 1)
         self.assertEqual(fruit.name, "Coco")
         self.assertEqual(fruit.photo, "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg")
         self.assertEqual(fruit.detail, "New Jaimaiquino")
@@ -21,28 +21,28 @@ class FruitTests(TestCase):
         self.assertEqual(fruit.max_quantity, 99)
 
     def test_fruit_str_1(self):
-        fruit = Fruit()
-        fruit.save(name="Coco", 
-                   phono = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
-                   detail = "New Jaimaiquino",
-                   description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",
-                   price = 80.5,
-                   max_quantity = 99)
+        fruit = Fruit(name="Coco", 
+                    photo = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
+                    detail = "New Jaimaiquino",
+                    description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",
+                    price = 80.5,
+                    max_quantity = 99)
+        fruit.save()
 
         # Compruebo el str funciona como se desea
         self.assertEqual(fruit.__str__(), "Coco | New Jaimaiquino | $80.5 Kg")
 
     def test_creation_fruit_2(self):
 
-        fruit = Fruit()
-        fruit.save(name="Ciruela", 
-                   phono = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
-                   detail = "Nueva sevilla de los andes",
-                   description = "Rico en vitamina A, sabor amargo",
-                   price = 120,
-                   max_quantity = 3)
+        fruit = Fruit(name="Ciruela",
+                    photo = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
+                    detail = "Nueva sevilla de los andes",
+                    description = "Rico en vitamina A, sabor amargo",
+                    price = 120,
+                    max_quantity = 3)
+        fruit.save()
 
-        self.assertEqual(fruit.objects.count(), 1)
+        self.assertEqual(Fruit.objects.count(), 1)
         self.assertEqual(fruit.name, "Ciruela")
         self.assertEqual(fruit.photo, "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg")
         self.assertEqual(fruit.detail, "Nueva sevilla de los andes")
@@ -51,13 +51,13 @@ class FruitTests(TestCase):
         self.assertEqual(fruit.max_quantity, 3)
 
     def test_fruit_str_2(self):
-        fruit = Fruit()
-        fruit.save(name="Ciruela", 
-                   phono = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
+        fruit = Fruit(name="Ciruela", 
+                   photo = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
                    detail = "Nueva sevilla de los andes",
                    description = "Rico en vitamina A, sabor amargo",
                    price = 120,
                    max_quantity = 3)
+        fruit.save()
 
         # Compruebo el str funciona como se desea
         self.assertEqual(fruit.__str__(), "Ciruela | Nueva sevilla de los andes | $120 Kg")
@@ -65,39 +65,45 @@ class FruitTests(TestCase):
 
     def test_creation_fruit_3(self):
 
-        fruit = Fruit()
-        fruit.save(name="Kiwi", 
-                   phono = "https://www.infobae.com/new-resizer/gVRGWPpWLmctvHrhMc0lm_KXJio=/992x661/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/02123426/vegetales-y-frutas-SF-5.jpg" , 
-                   detail = "El paradero de salta",
-                   description = "Ideal para pasteles de sobremesa",
-                   price = "80",
-                   max_quantity = 3)
+        fruit = Fruit(name="Kiwi", 
+                    photo = "https://www.infobae.com/new-resizer/gVRGWPpWLmctvHrhMc0lm_KXJio=/992x661/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/02123426/vegetales-y-frutas-SF-5.jpg" , 
+                    detail = "El paradero de salta",
+                    description = "Ideal para pasteles de sobremesa",
+                    price = "80",
+                    max_quantity = 3)
+        fruit.save()
 
-        self.assertEqual(fruit.objects.count(), 0) # da error por el price
+        self.assertEqual(Fruit.objects.count(), 1)
+        self.assertEqual(fruit.name, "Kiwi")
+        self.assertEqual(fruit.photo, "https://www.infobae.com/new-resizer/gVRGWPpWLmctvHrhMc0lm_KXJio=/992x661/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/02123426/vegetales-y-frutas-SF-5.jpg")
+        self.assertEqual(fruit.detail, "El paradero de salta")
+        self.assertEqual(fruit.description, "Ideal para pasteles de sobremesa")
+        self.assertEqual(fruit.price, "80")
+        self.assertEqual(fruit.max_quantity, 3)
 
     def test_fruit_str_3(self):
-        fruit = Fruit()
-        fruit.save(name="kiwi", 
-                   phono = "https://www.infobae.com/new-resizer/gVRGWPpWLmctvHrhMc0lm_KXJio=/992x661/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/02123426/vegetales-y-frutas-SF-5.jpg" , 
+        fruit = Fruit(name="kiwi", 
+                   photo = "https://www.infobae.com/new-resizer/gVRGWPpWLmctvHrhMc0lm_KXJio=/992x661/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/02123426/vegetales-y-frutas-SF-5.jpg" , 
                    detail = "El paradero de salta",
                    description = "Ideal para pasteles de sobremesa",
                    price = 80,
                    max_quantity = 3)
+        fruit.save()
 
         # Compruebo el str funciona como se desea
         self.assertEqual(fruit.__str__(), "kiwi | El paradero de salta | $80 Kg")
 
     def test_creation_fruit_4(self):
 
-        fruit = Fruit()
-        fruit.save(name="Papaya", 
-                   phono = "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic-500x500.jpg" , 
+        fruit = Fruit(name="Papaya", 
+                   photo = "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic-500x500.jpg" , 
                    detail = "The beach",
                    description = "Especial para comer en verano",
                    price = 100000,
                    max_quantity = 3000)
+        fruit.save()
 
-        self.assertEqual(fruit.objects.count(), 1)
+        self.assertEqual(Fruit.objects.count(), 1)
         self.assertEqual(fruit.name, "Papaya")
         self.assertEqual(fruit.photo, "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic-500x500.jpg")
         self.assertEqual(fruit.detail, "The beach")
@@ -106,13 +112,13 @@ class FruitTests(TestCase):
         self.assertEqual(fruit.max_quantity, 3000)
 
     def test_fruit_str_4(self):
-        fruit = Fruit()
-        fruit.save(name="Papaya", 
-                   phono = "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic-500x500.jpg" , 
+        fruit = Fruit(name="Papaya", 
+                   photo = "https://exoticfruitbox.com/wp-content/uploads/2015/10/papaya-3-Exotic-500x500.jpg" , 
                    detail = "The beach",
                    description = "Especial para comer en verano",
                    price = 100000,
                    max_quantity = 3000)
+        fruit.save()
 
         # Compruebo el str funciona como se desea
         self.assertEqual(fruit.__str__(), "Papaya | The beach | $100000 Kg")
@@ -127,7 +133,7 @@ class PurchaseCartTestCase(TestCase):
         self.user = User.objects.create(username="testuser")
         self.fruit = Fruit.objects.create(
                     name="Coco", 
-                    phono = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
+                    photo = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
                     detail = "New Jaimaiquino",
                     description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",
                     price = 80.5,
@@ -143,7 +149,7 @@ class PurchaseCartTestCase(TestCase):
             purchase_code=self.purchase_code
         )
 
-        purchase = PurchaseCart.objects.get(id=self.id)
+        purchase = PurchaseCart.objects.get(purchase_code=self.purchase_code)
         self.assertEqual(purchase.user.username, "testuser")
         self.assertEqual(purchase.fruit.name, "Coco")
         self.assertEqual(purchase.quantity, self.quantity)
@@ -156,7 +162,7 @@ class PurchaseCartTestCase(TestCase):
         self.user = User.objects.create(username="testuser")
         self.fruit = Fruit.objects.create(
             name="Coco", 
-            phono = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
+            photo = "https://s1.eestatic.com/2020/02/04/ciencia/nutricion/fruta-fibra-salud_464966035_144333391_1706x960.jpg" , 
             detail = "New Jaimaiquino",
             description = "Rico en vitamina B2, se destaca por su suavidad y dulzura",
             price = 80.5,
@@ -172,11 +178,12 @@ class PurchaseCartTestCase(TestCase):
             state=self.state,
             purchase_code=self.purchase_code
         )
+        purchase = PurchaseCart.objects.get(purchase_code=self.purchase_code)
 
         # Prueba que el estado de PurchaseCart se actualiza correctamente
-        self.state = 'COMPLETED'
-        self.save()
-        updated_cart = PurchaseCart.objects.get(id=self.id)
+        purchase.state = 'COMPLETED'
+        purchase.save()
+        updated_cart = PurchaseCart.objects.get(purchase_code=self.purchase_code)
         self.assertEqual(updated_cart.state, 'COMPLETED')
 
 
@@ -186,7 +193,7 @@ class PurchaseCartTestCase(TestCase):
         self.user = User.objects.create(username="testuser")
         self.fruit = Fruit.objects.create(
                     name="Ciruela", 
-                    phono = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
+                    photo = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
                     detail = "Nueva sevilla de los andes",
                     description = "Rico en vitamina A, sabor amargo",
                     price = 120,
@@ -202,7 +209,7 @@ class PurchaseCartTestCase(TestCase):
             purchase_code=self.purchase_code
         )
 
-        purchase = PurchaseCart.objects.get(id=self.id)
+        purchase = PurchaseCart.objects.get(purchase_code=self.purchase_code)
 
         self.assertEqual(purchase.user.username, "testuser")
         self.assertEqual(purchase.fruit.name, "Ciruela")
@@ -217,7 +224,7 @@ class PurchaseCartTestCase(TestCase):
         self.user = User.objects.create(username="testuser")
         self.fruit = Fruit.objects.create(
                     name="Ciruela", 
-                    phono = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
+                    photo = "https://editorialtelevisa.brightspotcdn.com/dims4/default/dbcfc9c/2147483647/strip/true/crop/600x338+0+31/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fwp-content%2Fuploads%2F2020%2F01%2Fciruelas.jpg" , 
                     detail = "Nueva sevilla de los andes",
                     description = "Rico en vitamina A, sabor amargo",
                     price = 120,
@@ -234,10 +241,10 @@ class PurchaseCartTestCase(TestCase):
             purchase_code=self.purchase_code
         )
 
-        purchase = PurchaseCart.objects.get(id=self.id)
+        purchase = PurchaseCart.objects.get(purchase_code=self.purchase_code)
 
         purchase.state = 'LLEGO A DESTINO'
         purchase.save()
-        updated_cart = PurchaseCart.objects.get(id=self.id)
+        updated_cart = PurchaseCart.objects.get(purchase_code=self.purchase_code)
         self.assertEqual(updated_cart.state, 'LLEGO A DESTINO')
 
