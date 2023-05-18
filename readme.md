@@ -49,9 +49,8 @@ NOMBRECARPETA_VENV\Scripts\activate```
 ## Usernames:
 |Nombre de usuario|contraseña     |
 |-----------------|---------------|
-|admin            |34648616q      |
-|messi10          |34648616qQ100% |
-| rene            |34648616q      |
+|admin            |11222333qQ100% |
+|jonny            |123456789qQ100%|
 
 
 + video youtube
