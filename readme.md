@@ -45,3 +45,9 @@ NOMBRECARPETA_VENV\Scripts\activate```
 
 ## Deployment
 + Link al deploy: [https://malinowski.pythonanywhere.com/](https://viva-la-birra-en-coderhouse.netlify.app/) 
+
+## Usernames:
++ admin 34648616q  
++ messi10 34648616qQ100%
++ rene 34648616q
+

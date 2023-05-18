@@ -18,6 +18,7 @@ def Registration(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()  # Esto lo puedo usar porque es un model form
+            #agregar avatar por defecto
             url_successful = reverse('home')
             return redirect(url_successful)
     else:  # GET
