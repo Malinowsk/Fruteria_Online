@@ -44,7 +44,7 @@ NOMBRECARPETA_VENV\Scripts\activate```
 + Link a demo: [Link a demo](https://drive.google.com/file/d/1ex05bc9jqY3rPV4MMn_Jveo87KAQxoca/view?usp=sharing)
 
 ## Deployment
-+ Link al deploy: [https://malinowski.pythonanywhere.com/](https://viva-la-birra-en-coderhouse.netlify.app/) 
++ Link al deploy: [https://malinowski.pythonanywhere.com/](https://malinowski.pythonanywhere.com/) 
 
 ## Usernames:
 |Nombre de usuario|contraseña     |
