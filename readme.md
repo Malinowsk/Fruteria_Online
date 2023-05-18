@@ -41,7 +41,7 @@ NOMBRECARPETA_VENV\Scripts\activate```
 + Ingresar desde el navegador web a la url: ```127.0.0.1:8000/```
 
 ## Video Demostración
-+ Link a demo: [Link a demo](https://youtu.be/sMbbPsu9Xxs)
++ Link a demo: [Link a demo](https://youtu.be/kLc-avCI1rk)
 
 ## Deployment
 + Link al deploy: [https://malinowski.pythonanywhere.com/](https://malinowski.pythonanywhere.com/) 
@@ -49,10 +49,7 @@ NOMBRECARPETA_VENV\Scripts\activate```
 ## Usernames:
 |Nombre de usuario|contraseña     |
 |-----------------|---------------|
+|admin1           |34648616qQ100% |
 |admin            |11222333qQ100% |
 |jonny            |123456789qQ100%|
 
-
-+ video youtube
-+ hacer lo de test
-+ pasaje funcion a class (opcional)
