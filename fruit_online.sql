@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2023 a las 03:17:19
+-- Tiempo de generación: 19-05-2023 a las 02:30:58
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -136,11 +136,13 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$600000$u0TrQpbqHEbqiGQxIEt6Xc$vurfQWZ3rtP3ePAVXeKxq6NAdBC8U+791EzLK0AjRws=', '2023-05-17 22:43:08.276640', 1, 'admin', 'Juan', 'Rago', 'juan1234@gmail.com', 1, 1, '2023-05-03 01:44:04.000000'),
+(1, 'pbkdf2_sha256$600000$u0TrQpbqHEbqiGQxIEt6Xc$vurfQWZ3rtP3ePAVXeKxq6NAdBC8U+791EzLK0AjRws=', '2023-05-18 03:29:49.695417', 1, 'admin1', 'Juan', 'Rago', 'juan1234@gmail.com', 1, 1, '2023-05-03 01:44:04.000000'),
 (2, 'pbkdf2_sha256$600000$EEo2dTKG4loafG8tJ8m3Bd$IIDAvn3Fk4C40qGUq3QWQX1oABxRa6q5jX8PEChZQAE=', NULL, 0, 'Maxi1989', 'Maximiliano', 'Rago', 'maxi1989@gmail.com', 0, 1, '2023-05-03 11:07:09.000000'),
 (3, 'pbkdf2_sha256$600000$LWgj8Ioc9FJD6iiXVoCgNI$o7w+KBwPwwwsq0f549ZS4x+LlVX2fbp5aFSZL5bU5eU=', NULL, 0, 'pedro1', 'Pedro', 'Lupo', 'pedro@gmail.com', 0, 1, '2023-05-12 10:55:43.820545'),
 (4, 'pbkdf2_sha256$600000$4oJkLNtO2dJdOq9h0U5ATa$s05cl9FRWhYzO49VsNV/6pHgfJdnu9aGMiq+OKpCgzY=', '2023-05-17 22:41:27.747062', 0, 'messi10', 'Messi', 'Leonel', 'messi@gmail.com', 0, 1, '2023-05-12 11:57:37.349502'),
-(5, 'pbkdf2_sha256$600000$T9oner8xDO2IcnLJ5eyJUB$h5MSZUcC2ALuMcD17PyVaJGp/oNT18f+HWTZWdaXnYM=', '2023-05-17 22:42:37.359859', 0, 'rene', 'faba', 'ren', 'h@gmail.com', 0, 1, '2023-05-17 03:09:41.163820');
+(5, 'pbkdf2_sha256$600000$T9oner8xDO2IcnLJ5eyJUB$h5MSZUcC2ALuMcD17PyVaJGp/oNT18f+HWTZWdaXnYM=', '2023-05-17 22:42:37.359859', 0, 'rene', 'faba', 'ren', 'h@gmail.com', 0, 1, '2023-05-17 03:09:41.163820'),
+(6, 'pbkdf2_sha256$600000$uqMFdZgXH9qhP9AKFwtBDA$QIqo6YsenEWjWLaxj8VdCy/fVprLkSi5PYkriwrOCB0=', '2023-05-18 03:32:43.328471', 1, 'admin', 'Pedro', 'Rojas', 'admin@gmail.com', 1, 1, '2023-05-18 03:27:47.000000'),
+(7, 'pbkdf2_sha256$600000$v55C46IgApTHp1hUvgxd1T$0G0Kvyj0WkedB1ML6s87Euz6ZVYA07jQCyZ8tfIqxvY=', '2023-05-18 03:35:25.770249', 0, 'jonny', 'John', 'Travolta', 'jt@gmail.com', 0, 1, '2023-05-18 03:35:04.415810');
 
 -- --------------------------------------------------------
 
@@ -254,7 +256,9 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (64, '2023-05-17 22:32:57.265700', '12', 'Sandia | Sandia Riojana | $110.00 Kg', 1, '[{\"added\": {}}]', 11, 1),
 (65, '2023-05-17 22:33:55.095258', '13', 'Durazno | Durazno Argentino | $400.00 Kg', 1, '[{\"added\": {}}]', 11, 1),
 (66, '2023-05-17 22:34:41.369301', '14', 'Uva | Uva Malbec | $230.00 Kg', 1, '[{\"added\": {}}]', 11, 1),
-(67, '2023-05-17 22:35:20.687595', '15', 'Pera | Pera Bartlett | $170.00 Kg', 1, '[{\"added\": {}}]', 11, 1);
+(67, '2023-05-17 22:35:20.687595', '15', 'Pera | Pera Bartlett | $170.00 Kg', 1, '[{\"added\": {}}]', 11, 1),
+(68, '2023-05-18 03:24:15.416510', '1', 'admin1', 2, '[{\"changed\": {\"fields\": [\"Username\"]}}]', 4, 1),
+(69, '2023-05-18 03:30:46.966245', '6', 'admin', 2, '[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -350,7 +354,6 @@ CREATE TABLE `django_session` (
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('0n96ev3f9j827t46aegkaxtwbljidhz1', '.eJxVjEsOAiEQBe_C2hBp5OfSvWcgDd3IqIFkmFkZ766TzEK3r6reS0RclxrXwXOcSJyFEoffLWF-cNsA3bHdusy9LfOU5KbInQ557cTPy-7-HVQc9VubkwkQwGUIDhJa7xRoLAohF5UVc9YE7AtSSdoYbZWzngNpm9DB0Yj3B9DlN6Q:1pxTue:R6iVrYOT37YPjnAFfmRpPyzyrKscR7ElMRYpto7Ul_E', '2023-05-26 14:38:28.495322'),
-('0zi5i54htj68lz7i30y5nu7h9wb1t447', '.eJxVjEsOAiEQBe_C2hBp5OfSvWcgDd3IqIFkmFkZ766TzEK3r6reS0RclxrXwXOcSJyFEoffLWF-cNsA3bHdusy9LfOU5KbInQ557cTPy-7-HVQc9VubkwkQwGUIDhJa7xRoLAohF5UVc9YE7AtSSdoYbZWzngNpm9DB0Yj3B9DlN6Q:1pzPrQ:FCjNzRA2t-yhzq5jcJnN2vCvmLV2wyt2y0DsxHt4iSM', '2023-05-31 22:43:08.279655'),
 ('51srdh52anablukm2c53sleewexik5o7', '.eJxVjEsOAiEQBe_C2hBp5OfSvWcgDd3IqIFkmFkZ766TzEK3r6reS0RclxrXwXOcSJyFEoffLWF-cNsA3bHdusy9LfOU5KbInQ557cTPy-7-HVQc9VubkwkQwGUIDhJa7xRoLAohF5UVc9YE7AtSSdoYbZWzngNpm9DB0Yj3B9DlN6Q:1pxTcq:-XXydA4pLoTGwFZ6ZyicVfMKAtJNzMrvGHVn7qeK6g0', '2023-05-26 14:20:04.540392'),
 ('5dzrdzbhfbvqj8x9xiq7x1rux52q1e1n', '.eJxVjEsOAiEQBe_C2hBp5OfSvWcgDd3IqIFkmFkZ766TzEK3r6reS0RclxrXwXOcSJyFEoffLWF-cNsA3bHdusy9LfOU5KbInQ557cTPy-7-HVQc9VubkwkQwGUIDhJa7xRoLAohF5UVc9YE7AtSSdoYbZWzngNpm9DB0Yj3B9DlN6Q:1pxTgI:b7D35XDNjqmKYGu9SmPc2CybsqKyaCWWJTRberJzwuY', '2023-05-26 14:23:38.363380'),
 ('fseu1bb5nohg08pmfzq8xg3m0tbdntpa', '.eJxVjEsOAiEQBe_C2hBp5OfSvWcgDd3IqIFkmFkZ766TzEK3r6reS0RclxrXwXOcSJyFEoffLWF-cNsA3bHdusy9LfOU5KbInQ557cTPy-7-HVQc9VubkwkQwGUIDhJa7xRoLAohF5UVc9YE7AtSSdoYbZWzngNpm9DB0Yj3B9DlN6Q:1pu1lZ:ow8-CawYHJXsLAHhEuYmre509zRtBEWoJa-fvNKlmLU', '2023-05-17 01:58:49.249350'),
@@ -444,7 +447,9 @@ INSERT INTO `profiles_avatar` (`id`, `image`, `user_id`) VALUES
 (2, 'avatares/avatar2_1YUJTgl.png', 4),
 (3, 'avatares/avatar3_qLUhKhD.png', 5),
 (8, 'avatares/avatar2_UVZHT3u.png', NULL),
-(9, 'avatares/avatar1_GQx3s9u.png', NULL);
+(9, 'avatares/avatar1_GQx3s9u.png', NULL),
+(10, 'avatares/avatar1_PL5o2vf.png', 6),
+(11, 'avatares/avatar3_XekgklU.png', 7);
 
 --
 -- Índices para tablas volcadas
@@ -570,7 +575,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT de la tabla `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `auth_user_groups`
@@ -588,7 +593,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT de la tabla `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT de la tabla `django_content_type`
@@ -618,7 +623,7 @@ ALTER TABLE `fruit_shop_purchasecart`
 -- AUTO_INCREMENT de la tabla `profiles_avatar`
 --
 ALTER TABLE `profiles_avatar`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
